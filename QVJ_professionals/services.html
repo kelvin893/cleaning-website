@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QVJ Cleaning professionals</title>
+
+
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #007bff;
+}
+
+
+
+@font-face {
+    font-family: 'Dafont';
+    src: url('font-family/Pacifico.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dafont1';
+    src: url('font-family/Idealy2.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Dafont2';
+    src: url('font-family/ValentineSoul.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Dafont3';
+    src: url('font-family/Coffee Soda.otf') format('opentype');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- Container for the two-column layout ----------------------------------------------------------------------- */
+.two-column-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 40px 12px 40px 12px;
+}
+
+/* Left column with sticky image */
+.left-column {
+    /* width: 25%; */
+    margin: 12px;
+    position: relative;
+}
+
+
+/* Right column with text */
+.right-column {
+    width: 100%; /* Wider column */
+    padding-left: 180px; /* Add some spacing between the divider and text */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .two-column-container {
+        flex-direction: column;
+    }
+
+    .left-column {
+        width: 100%; /* Full width on smaller screens */
+    }
+    .right-column {
+        width: 100%; /* Full width on smaller screens */
+        padding-left: 25px; /* Add some spacing between the divider and text */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- Basic right & left autoscroll styling ----------------------------------------------------------------------- */
+.hidden-left {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
+  
+  .hidden-right {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+  
+  .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  
+  .hidden-left:nth-child(2){
+    transition-delay: 200ms;
+  }
+  .hidden-left:nth-child(3){
+    transition-delay: 500ms;
+  }
+  .hidden-left:nth-child(4){
+    transition-delay: 700ms;
+  }
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- underline-effect  ----------------------------------------------------------------------- */
+.underline-effect {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Pseudo-element for the underline */
+.underline-effect::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    border-radius: 8px;
+    background-color: #007bff; /* Blue color for the underline */
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+/* Hover effect expanding the line outward from the center */
+.underline-effect:hover::after,
+.underline-effect.active::after {
+    width: 100%;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------------------------pop-up-text  ----------------------------------------------------------------------- */
+/* Default transition */
+.pop-up-text {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.pop-up-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.pop-up-text:nth-child(2){
+    transition-delay: 200ms;
+  }
+  .pop-up-text:nth-child(3){
+    transition-delay: 600ms;
+  }
+  .pop-up-text:nth-child(4){
+    transition-delay: 700ms;
+  }
+
+/* Disable transition on small screens */
+@media (max-width: 768px) {
+    .pop-up-text {
+        transition: none;
+        opacity: 1;
+        transform: translateY(0); /* Reset position */
+    }
+}
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------------------------  header ----------------------------------------------------------------------- */
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('images/cleaning20.jpg') no-repeat center center/cover;
+}
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.571);
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.571);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.navbar img {
+    height: 40px;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+.navbar ul li {
+    margin: 12px;
+}
+.navbar ul li a {
+    color: #ffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+.navbar ul li a:hover{
+    transform: scale(1.05);
+}
+.hero-content {
+    position: absolute;
+    top: 40%;
+    left: 6%;
+    transform: translateY(-50%);
+    color: #ffff;
+    max-width: 70%;
+    z-index: 1;
+}
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 50%;
+}
+.ptxt{
+    font-family: Dafont1;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.menu-toggle{
+    display: none;
+}
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.941);
+        backdrop-filter: blur(10px);
+        text-align: center;
+        padding: 10px 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+    }
+    .navbar ul.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+    }
+    .hero-content {
+        max-width: 80%;
+    }
+    .hero-content h2 {
+        word-wrap: break-word;
+        font-size: 2.3rem;
+    }
+    .hero-content p {
+        width: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------------------------  fanta ----------------------------------------------------------------------- */
+/* .fanta{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} */
+.container {
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    /* width: 400px;
+    height: 485px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0; */
+}
+.horz{
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.horz2{
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.radio-group label {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: bold;
+    margin-bottom: 5px;
+    gap: 12px;
+}
+select, input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+.submit-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.submit-btn:hover {
+    background: rgb(54, 155, 255);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .fanta {
+    display: grid;
+    grid-template-columns: none;
+    }
+    .container {
+    padding: 25px;
+    width: 92%;
+    }
+    .horz {
+    grid-template-columns: none;
+    }
+    .horz2 {
+    grid-template-columns: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------------------------  container2 ----------------------------------------------------------------------- */
+    .container2 {
+        /* position: relative;
+        max-width: 800px;
+        right: 50px;
+        margin-left: 650px;
+        padding: 0px 10px; */
+        color: #ffff;
+    }
+    .container2 h1 {
+        font-size: 2em;
+        width: 500px;
+    }
+    .container2 p {
+        font-size: 1em;
+        margin-bottom: 20px;
+        width: 500px;
+    }
+    .buttons {
+        display: flex;
+        justify-content: left;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .btn-primary {
+        background: white;
+        color: #007bff;
+        border: none;
+        transition: transform 0.3s ease-in-out;
+}
+    .btn-primary:hover {
+        color: #ffff;
+        background: #007bff;
+        border: 2px solid #ffff;
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+    .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+        margin: -12px 0 -12px 0;
+        max-width: 600px;
+    }
+    .feature-icon {
+    background: #00c2ff;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+    .container2 p {
+        width: 244px;
+    }
+    .container2 {
+    overflow: hidden;
+    /* left: 50px; */
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------------------------  footer ----------------------------------------------------------------------- */
+footer {
+    background: #1c3687;
+    color: white;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+}
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    line-height: 2;
+}
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    line-height: 1.8;
+}
+.footera{
+    color: #ffffff;
+    text-decoration: none;
+}
+.cta-button {
+    background: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.footer-subscribe {
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+.footer-subscribe .logo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00aaff;
+}
+.subscribe-text{
+    color: #1c3687;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.subscribe-form input {
+    padding: 10px;
+    width: 65%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.subscribe-form button {
+    background: #00aaff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+.footer-bottom a {
+    color: #00aaff;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-subscribe {
+        flex-direction: column;
+    }
+    .subscribe-form {
+        margin-top: 10px;
+    }
+    .subscribe-form input {
+    margin: 12px 0 12px 0;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    
+
+     <!-------------------------------------------------------header ------------------------------------------------------------------>
+     <nav class="navbar">
+        <img src="images/cleaninglogo.png" alt="Logo">
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <ul id="nav-links">
+            <li><a href="index.html" class="underline-effect">Home</a></li>
+            <li><a href="about.html" class="underline-effect">About</a></li>
+            <li><a href="services.html" class="underline-effect active">Services</a></li>
+            <li><a href="testimonials.html" class="underline-effect">Testimonials</a></li>
+            <li><a href="contact.html" class="underline-effect">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <div class="hero-content pop-up-text">
+            <p class="ptxt">Let’s Help With All Your Cleaning Needs</p>
+            <h2>OUR SERVICES</h2>
+            <p>Our professional cleaning services are designed to deliver spotless perfection with industry-leading techniques and eco-friendly solutions.</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+     <!------------------------------------------------------- two-column-container ------------------------------------------------------------------>
+<div class="two-column-container">
+    <div class="left-column">
+
+
+    <div class="fanta">
+
+    <div class="container">
+        <h2>BOOK NOW</h2>
+<form id="estimateForm">
+
+<!-- 👤 Personal Info Section -->
+  <div class="horz">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" id="firstName" placeholder="Enter first name" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" id="lastName" placeholder="Enter last name" required>
+    </div>
+  </div>
+
+  <div class="horz">
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter email address" required>
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" id="phone" placeholder="Enter phone number" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>State</label>
+    <input type="text" id="state" placeholder="Enter your state" required>
+  </div>
+<br>
+  <div class="form-group">
+    <label>Neighborhood / Suburb</label>
+    <input type="text" id="neighborhood" placeholder="Enter neighborhood or suburb" required>
+  </div>
+
+  <!-- 👇 Original Form Continues -->
+  <div class="horz">
+    <div class="form-group">
+      <label>Choose your service</label>
+      <select id="service" required>
+        <option value="">Office Cleaning</option>
+        <option value="Coronavirus Cleaning">Floor Care</option>
+        <option value="Office Cleaning">Carpet Cleaning</option>
+        <option value="Home Cleaning">Vacuuming</option>
+        <option value="Home Cleaning">Sanitizing</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Indicate type of cleaning</label>
+      <select id="cleaningType" required>
+        <option value="">Daily</option>
+        <option value="Weekly Regular">Weekly</option>
+        <option value="One-time Cleaning">One-time Cleaning</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="horz">
+    <div class="form-group">
+      <label>Facility type</label>
+      <select id="facilityType" required>
+        <option value="">Select facility type</option>
+        <option value="Educational">Educational</option>
+        <option value="Commercial">Commercial</option>
+        <option value="Residential">Residential</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Facility name</label>
+      <input type="text" id="facilityName" placeholder="Enter facility name" required>
+    </div>
+  </div>
+
+  <div class="horz2">
+    <div class="form-group">
+      <label>Room(s)?</label>
+      <input type="number" id="rooms" min="1" value="1" required>
+    </div>
+
+    <div class="form-group">
+      <label>Hallway(s)?</label>
+      <input type="number" id="hallways" min="0" value="0" required>
+    </div>
+
+    <div class="form-group">
+      <label>Staircase(s)?</label>
+      <input type="number" id="staircases" min="0" value="0" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Do you have all the necessary cleaning supplies?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="supplies" value="yes" required> Yes</label>
+      <label><input type="radio" name="supplies" value="no" required> No</label>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">Submit Request</button>
+</form>
+
+    </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+ <!------------------------------------------------------- right-column ------------------------------------------------------------------>
+ <div class="right-column">
+
+    <div class="container2">
+        <h1>Our Services</h1>
+        <p>If you want to know more about us Please click the button down below.</p>
+        <div class="buttons">
+            <a href="about.html" class="btn btn-primary">Explore More</a>
+            <!-- <a href="#" class="btn btn-secondary">Explore More</a> -->
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">✔</div>
+            <div>
+                <h3>Office Cleaning</h3>
+                <p>Today, there are more than 250 individually cleaning service franchises operating across the U.S. The last year, we performed 2 million cleaning services which were for repeat customers.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">✔</div>
+            <div>
+                <h3>Floor Care</h3>
+                <p>Working most commonly on a weekly or every other week schedule, we work for the busy individuals and families, ensuring comfortable homes to return to and enjoy.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">✔</div>
+            <div>
+                <h3>Carpet Cleaning</h3>
+                <p>Working most commonly on a weekly or every other week schedule, we work for the busy individuals and families, ensuring comfortable homes to return to and enjoy.</p>
+            </div>
+        </div>
+        
+        <div class="feature">
+            <div class="feature-icon">✔</div>
+            <div>
+                <h3>Vacuuming</h3>
+                <p>Working most commonly on a weekly or every other week schedule, we work for the busy individuals and families, ensuring comfortable homes to return to and enjoy.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">✔</div>
+            <div>
+                <h3>Sanitizing </h3>
+                <p>Working most commonly on a weekly or every other week schedule, we work for the busy individuals and families, ensuring comfortable homes to return to and enjoy.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------------------------------------------------------- footer-container ------------------------------------------------------------------>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Quick Contact</h4>
+                <p>If you have any questions or need help, feel free to contact our team.</p>
+                <p><strong>&#9742; +302-973-2470</strong></p>
+                <p>1113 Prospect Avenue Wilmington, DE 19808 United States.</p>
+                <a href="contact.html" class="footera">&#x1F4CD; Get Directions</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Servicess</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Office Cleaning</a></li>
+                    <li><a href="services.html">Floor Care</a></li>
+                    <li><a href="services.html">Carpet Cleaning</a></li>
+                    <li><a href="services.html"> Vacuuming </a></li>
+                    <li><a href="services.html"> Sanitizing </a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Become a Franchise</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cleaning Tips</a></li>
+                    <li><a href="#">Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <button class="cta-button">Request An Estimate</button>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-subscribe">
+            <div class="logo">&#x1F4A1; QVJ</div>
+            <div class="subscribe-text">
+                <p>Sign up for industry alerts, deals, news, and insights from QVJ Cleaning Professionals LLC.</p>
+            </div>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="footer-bottom">
+             <p>&copy;2025 QVJ, All Rights Reserved. <!--<a href="#">7oroof.com</a>--> </p> 
+            <p><a href="#">Terms & Conditions</a> - <a href="#">Privacy Policy</a> - <a href="#">Sitemap</a></p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script>
+    ////navbar
+    function toggleMenu() {
+        var navLinks = document.getElementById('nav-links');
+        if (navLinks.classList.contains('active')) {
+            navLinks.style.opacity = "0";
+            navLinks.style.transform = "translateY(-10px)";
+            setTimeout(() => navLinks.classList.remove('active'), 300);
+        } else {
+            navLinks.classList.add('active');
+            setTimeout(() => {
+                navLinks.style.opacity = "1";
+                navLinks.style.transform = "translateY(0)";
+            }, 10);
+        }
+    }
+
+
+
+
+
+
+
+
+    ////pop-up-text animation constant 
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     const observerOptions = {
+    //         threshold: 0.1
+    //     };
+    
+    //     const observer = new IntersectionObserver((entries) => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 entry.target.classList.add("visible");
+    //             } else {
+    //                 entry.target.classList.remove("visible");
+    //             }
+    //         });
+    //     }, observerOptions);
+    
+    //     // Select **all** elements with class `.pop-up-text`
+    //     const textElements = document.querySelectorAll(".pop-up-text");
+    //     textElements.forEach(element => observer.observe(element));
+    // });
+
+
+        ////pop-up-text animation once
+    document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+            threshold: 0.1
+        };
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    // Stop observing this element after it becomes visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+    
+        // Select all elements with class `.pop-up-text`
+        const textElements = document.querySelectorAll(".pop-up-text");
+        textElements.forEach(element => observer.observe(element));
+    });
+    
+
+
+
+
+
+
+
+
+
+
+    // Animation slide right and left constantly running
+    const slideObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+    
+    const hiddenElements = document.querySelectorAll('.hidden-left, .hidden-right');
+    hiddenElements.forEach((el) => slideObserver.observe(el));
+
+
+
+
+
+        // booking form 
+      document.getElementById("estimateForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let service = document.getElementById("service").value;
+            let cleaningType = document.getElementById("cleaningType").value;
+            let facilityType = document.getElementById("facilityType").value;
+            let facilityName = document.getElementById("facilityName").value;
+            let rooms = document.getElementById("rooms").value;
+            let hallways = document.getElementById("hallways").value;
+            let staircases = document.getElementById("staircases").value;
+            let supplies = document.querySelector('input[name="supplies"]:checked');
+            
+            if (!service || !cleaningType || !facilityType || !facilityName || !rooms || !hallways || !staircases || !supplies) {
+                alert("Please fill in all required fields before submitting.");
+                return;
+            }
+            
+            alert("Your request has been submitted successfully!");
+        });
+
+
+
+    </script>
+
+</body>
+</html>

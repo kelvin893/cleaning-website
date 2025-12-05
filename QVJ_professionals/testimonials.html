@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QVJ Cleaning professionals</title>
+
+    <!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="hstyle.css">
+
+  <style>
+
+
+
+
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f5f8ff;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------------------------  header ----------------------------------------------------------------------- */
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('images/cleaning23.jpg') no-repeat center center/cover;
+}
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.571);
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.571);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.navbar img {
+    height: 40px;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+.navbar ul li {
+    margin: 12px;
+}
+.navbar ul li a {
+    color: #ffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+.navbar ul li a:hover{
+    transform: scale(1.05);
+}
+.hero-content {
+    position: absolute;
+    top: 40%;
+    left: 6%;
+    transform: translateY(-50%);
+    color: #ffff;
+    max-width: 70%;
+    z-index: 1;
+}
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 50%;
+}
+.ptxt{
+    font-family: Dafont1;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.menu-toggle{
+    display: none;
+}
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.941);
+        backdrop-filter: blur(10px);
+        text-align: center;
+        padding: 10px 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+    }
+    .navbar ul.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+    }
+    .hero-content {
+        max-width: 80%;
+    }
+    .hero-content h2 {
+        word-wrap: break-word;
+        font-size: 2.3rem;
+    }
+    .hero-content p {
+        width: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- Container for the two-column layout ----------------------------------------------------------------------- */
+.two-column-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 12px;
+}
+
+/* Left column with sticky image */
+.left-column {
+    width: 25%; /* Smaller column for the image */
+    position: relative;
+}
+
+
+
+
+
+/* Right column with text */
+.right-column {
+    width: 100%; /* Wider column */
+    padding-left: 180px; /* Add some spacing between the divider and text */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .two-column-container {
+        flex-direction: column;
+    }
+
+    .left-column {
+        width: 100%; /* Full width on smaller screens */
+    }
+    .right-column {
+        width: 100%; /* Full width on smaller screens */
+        padding-left: 0; 
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- rating-section ----------------------------------------------------------------------- */
+    .rating-section {
+      position: sticky;
+      width: 150%;
+      height: 600px;
+      padding: 20px;
+      max-width: 400px;
+      border-radius: 10px;
+      background: #ffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      /* margin: 8px; */
+    }
+
+    .rating-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .rating-header h1 {
+      font-size: 2rem;
+      color: #5f6c8f;
+    }
+
+    .rating-header p {
+      color: #9aa4bf;
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+
+    .stars-bar {
+      margin: 15px 0;
+    }
+
+    .stars-bar .bar {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+    }
+
+    .bar .label {
+      width: 30px;
+    }
+
+    .bar .progress {
+      flex: 1;
+      height: 8px;
+      margin: 0 10px;
+      background: #e0e0e0;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .bar .progress-fill {
+      height: 100%;
+      border-radius: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .bar .count {
+      width: 40px;
+      text-align: right;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .progress-fill.green { background: #4caf50; }
+    .progress-fill.red { background: #f44336; }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+
+    .features > div {
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* Add vertical line to all but the last */
+.features > div:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #ccc; /* or any color you prefer */
+}
+
+    .features div {
+      flex: 1;
+    }
+
+    .features div p {
+      margin-top: 5px;
+      color: #7b88a8;
+      font-size: 0.9rem;
+    }
+
+    .features div span {
+      background: #005eff;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-top: 5px;
+    }
+
+    .rate-product {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .rate-product img {
+      width: 40px;
+      margin-bottom: 10px;
+    }
+
+    .rate-product p {
+      color: #333;
+      font-weight: bold;
+    }
+
+
+
+
+    .rating-box {
+      height: 100px;
+      background: white;
+      padding: 5px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .star {
+      font-size: 2rem;
+      color: #ccc;
+      transition: color 0.3s;
+      margin: 0 5px;
+    }
+
+    .star.selected {
+      color: #ffc107;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .rating-section {
+        max-width: 100%;
+        margin-bottom: 12px;
+      }
+
+      .features {
+        flex-direction: row;
+      }
+
+    }
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- image-container ----------------------------------------------------------------------- */
+    .image-container {
+      width: 100%;
+      max-width: 600px; /* optional limit */
+      margin: 3rem;
+      overflow: hidden;
+      border-radius: 3px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Optional: Responsive padding below */
+    @media (max-width: 768px) {
+      .image-container {
+        padding: 10px;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- review-container ----------------------------------------------------------------------- */
+    .review-container {
+      /* display: flex;
+      padding: 0px 10px;
+      margin: 1.6rem 0 1.6rem 20rem;
+
+      flex-direction: column; */
+      gap: 20px; 
+      max-width: 700px;
+      /* margin: 2rem  0  0  3rem; */
+    }
+
+    .review-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+    .review-form-container {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.review-form-container h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.review-form .form-group {
+  margin-bottom: 20px;
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.review-form input[type="text"]:focus,
+.review-form textarea:focus {
+  outline: none;
+  border-color: #2962ff;
+}
+
+.review-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-stars {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.form-star {
+  font-size: 1.8rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.form-star.selected {
+  color: #ffc107;
+}
+
+.form-star:hover {
+  color: #ffc107;
+}
+
+.submit-review-btn {
+  background: #2962ff;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.submit-review-btn:hover {
+  background: #1e4dd8;
+}
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+
+    .review-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .date {
+      font-size: 13px;
+      color: gray;
+    }
+
+    .rating {
+      background-color: #2962ff;
+      color: white;
+      font-weight: bold;
+      width: 50px;
+      font-size: 13px;
+      border-radius: 5px;
+      padding: 3px 6px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .review-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin: 10px 0 5px;
+    }
+
+    .review-body {
+      color: #444;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    
+    /* .review-actions {
+    display: flex;
+    position: relative;
+    left: 288px;
+    gap: 15px;
+    margin-bottom: 51px;
+    }
+
+    .action {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: gray;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .action:hover {
+      color: #000;
+    } */
+
+    @media (max-width: 600px) {
+      .review-card {
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+
+      .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      /* .review-actions {
+        justify-content: space-between;
+        flex-wrap: wrap;
+      } */
+    }
+
+
+
+  </style>
+
+</head>
+<body>
+
+
+   <!-------------------------------------------------------header ------------------------------------------------------------------>
+   <nav class="navbar">
+    <img src="images/cleaninglogo.png" alt="Logo">
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="nav-links">
+        <li><a href="index.html" class="underline-effect">Home</a></li>
+        <li><a href="about.html" class="underline-effect">About</a></li>
+        <li><a href="services.html" class="underline-effect">Services</a></li>
+        <li><a href="testimonials.html" class="underline-effect active">Testimonials</a></li>
+        <li><a href="contact.html" class="underline-effect">Contact</a></li>
+    </ul>
+</nav>
+<div class="header">
+    <div class="hero-content pop-up-text">
+        <p class="ptxt">Let’s Help With All Your Cleaning Needs</p>
+        <h2>TESTIMONIALS</h2>
+        <p>Our professional cleaning services are designed to deliver spotless perfection with industry-leading techniques and eco-friendly solutions.</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+ <!------------------------------------------------------- two-column-container ------------------------------------------------------------------>
+<div class="two-column-container">
+  <div class="left-column">
+
+ <!------------------------------------------------------- rating-section ------------------------------------------------------------------>
+  <div class="rating-section">
+    <div class="rating-header">
+      <h1>4.5 ★</h1>
+      <p>437 Ratings & 47 Reviews</p>
+    </div>
+
+    <div class="stars-bar">
+      <div class="bar">
+        <span class="label">5 ★</span>
+        <div class="progress"><div class="progress-fill green" style="width: 80%"></div></div>
+        <span class="count">(3.1k)</span>
+      </div>
+      <div class="bar">
+        <span class="label">4 ★</span>
+        <div class="progress"><div class="progress-fill green" style="width: 70%"></div></div>
+        <span class="count">(14k)</span>
+      </div>
+      <div class="bar">
+        <span class="label">3 ★</span>
+        <div class="progress"><div class="progress-fill green" style="width: 50%"></div></div>
+        <span class="count">(10k)</span>
+      </div>
+      <div class="bar">
+        <span class="label">2 ★</span>
+        <div class="progress"><div class="progress-fill green" style="width: 20%"></div></div>
+        <span class="count">(3k)</span>
+      </div>
+      <div class="bar">
+        <span class="label">1 ★</span>
+        <div class="progress"><div class="progress-fill red" style="width: 10%"></div></div>
+        <span class="count">(3k)</span>
+      </div>
+    </div>
+
+    <div class="features">
+      <div>
+        <img src="https://img.icons8.com/?size=100&id=24761&format=png&color=000000" width="30" alt="Battery">
+        <p>Satisfied clients</p>
+        <span>4.5 ★</span>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/?size=100&id=Ijmpui9OY0rA&format=png&color=000000" width="30" alt="Performance">
+        <p>Good Reviews</p>
+        <span>4.4 ★</span>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/?size=100&id=DZLTdbxT69eI&format=png&color=000000" width="30" alt="Design">
+        <p>Quality Services</p>
+        <span>4.1 ★</span>
+      </div>
+    </div>
+
+    <div class="rate-product">
+      <img src="https://img.icons8.com/emoji/48/smiling-face-with-smiling-eyes.png" alt="Rating emoji">
+      <p>Very Goood Services</p>
+    </div>
+    <br>
+    
+    <div class="rating-box">
+      <div class="stars" id="stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <div class="message" id="message"></div>
+    </div>
+
+
+  </div>
+
+
+
+
+  <div class="image-container">
+    <img src="images/cleaninglogo.png" alt="Sample Image">
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!------------------------------------------------------- right-column ------------------------------------------------------------------>
+  
+    <div class="right-column">
+      <!-- ADD THIS NEW FORM SECTION -->
+      <div class="review-form-container">
+        <h3>Share Your Experience</h3>
+        <form id="reviewForm" class="review-form">
+          <div class="form-group">
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" name="userName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="reviewTitle">Review Title:</label>
+            <input type="text" id="reviewTitle" name="reviewTitle" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="reviewRating">Rating:</label>
+            <div class="form-stars" id="formStars">
+              <span class="form-star" data-value="1">★</span>
+              <span class="form-star" data-value="2">★</span>
+              <span class="form-star" data-value="3">★</span>
+              <span class="form-star" data-value="4">★</span>
+              <span class="form-star" data-value="5">★</span>
+            </div>
+            <input type="hidden" id="reviewRating" name="reviewRating" value="0">
+          </div>
+          
+          <div class="form-group">
+            <label for="reviewText">Your Experience:</label>
+            <textarea id="reviewText" name="reviewText" rows="4" placeholder="Share your cleaning experience with us..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-review-btn">Submit Testimonial</button>
+        </form>
+      </div>
+   <!-- Review Card 1 -->
+   <div class="review-container">
+    <!-- Review Card 1 -->
+    <div class="review-card">
+
+      <div class="review-header">
+        <img src="https://i.pravatar.cc/50?img=1" class="avatar" alt="User" />
+        <div class="review-info">
+          <div class="name">Darrell Steward</div>
+          <div class="date">1 Feb, 2021</div>
+          <div class="rating">4.1 ★</div>
+        </div>
+
+        <!-- <div class="review-actions">
+          <div class="action">👍 453</div>
+          <div class="action">👎 583</div>
+        </div> -->
+
+      </div>
+
+      <div class="review-title">Brilliant</div>
+      <div class="review-body">
+        I've never seen my home this clean before. The team was punctual, professional, and thorough. Highly recommend to anyone who wants their space to sparkle.
+      </div>
+
+    </div>
+
+    <!-- Review Card 2 -->
+    <div class="review-card">
+
+      <div class="review-header">
+        <img src="https://i.pravatar.cc/50?img=2" class="avatar" alt="User" />
+        <div class="review-info">
+          <div class="name">Albert Flores</div>
+          <div class="date">17 Oct, 2020</div>
+          <div class="rating">4.1 ★</div>
+        </div>
+
+        <!-- <div class="review-actions">
+          <div class="action">👍 798</div>
+          <div class="action">👎 738</div>
+        </div> -->
+
+      </div>
+
+      <div class="review-title">Just WOW</div>
+      <div class="review-body">
+        They showed up right on time and went above and beyond with the cleaning. My kitchen and bathrooms are shining! Will definitely book again.
+      </div>
+
+    </div>
+
+    <!-- Review Card 3 -->
+    <div class="review-card">
+
+      <div class="review-header">
+        <img src="images/persons4.webp" class="avatar" alt="User" />
+        <div class="review-info">
+          <div class="name">Malik T</div>
+          <div class="date">17 Oct, 2020</div>
+          <div class="rating">4.1 ★</div>
+        </div>
+
+        <!-- <div class="review-actions">
+          <div class="action">👍 798</div>
+          <div class="action">👎 738</div>
+        </div> -->
+
+      </div>
+
+      <div class="review-title">Just WOW</div>
+      <div class="review-body">
+        After a long renovation, I was overwhelmed with the dust and mess. This cleaning crew made my place feel brand new in just a few hours.
+      </div>
+
+    </div>
+
+    <!-- Review Card 4 -->
+    <div class="review-card">
+
+      <div class="review-header">
+        <img src="images/persons7.jpg" class="avatar" alt="User" />
+        <div class="review-info">
+          <div class="name">Olivia R</div>
+          <div class="date">17 Oct, 2020</div>
+          <div class="rating">4.1 ★</div>
+        </div>
+
+        <!-- <div class="review-actions">
+          <div class="action">👍 798</div>
+          <div class="action">👎 738</div>
+        </div> -->
+
+      </div>
+
+      <div class="review-title">Just WOW</div>
+      <div class="review-body">
+        The cleaners were friendly, respectful, and did an amazing job. Even the small details were taken care of. I'm impressed!.
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------------------------------------------------------- footer-container ------------------------------------------------------------------>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Quick Contact</h4>
+                <p>If you have any questions or need help, feel free to contact our team.</p>
+                <p><strong>&#9742; +302-973-2470</strong></p>
+                <p>1113 Prospect Avenue Wilmington, DE 19808 United States.</p>
+                <a href="contact.html" class="footera">&#x1F4CD; Get Directions</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Servicess</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Office Cleaning</a></li>
+                    <li><a href="services.html">Floor Care</a></li>
+                    <li><a href="services.html">Carpet Cleaning</a></li>
+                    <li><a href="services.html"> Vacuuming </a></li>
+                    <li><a href="services.html"> Sanitizing </a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Become a Franchise</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cleaning Tips</a></li>
+                    <li><a href="#">Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <button class="cta-button">Request An Estimate</button>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-subscribe">
+            <div class="logo">&#x1F4A1; QVJ</div>
+            <div class="subscribe-text">
+                <p>Sign up for industry alerts, deals, news, and insights from QVJ Cleaning Professionals LLC.</p>
+            </div>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="footer-bottom">
+             <p>&copy;2025 QVJ, All Rights Reserved. <!--<a href="#">7oroof.com</a>--> </p> 
+            <p><a href="#">Terms & Conditions</a> - <a href="#">Privacy Policy</a> - <a href="#">Sitemap</a></p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+
+    ////navbar
+    function toggleMenu() {
+    var navLinks = document.getElementById('nav-links');
+    if (navLinks.classList.contains('active')) {
+      navLinks.style.opacity = "0";
+      navLinks.style.transform = "translateY(-10px)";
+      setTimeout(() => navLinks.classList.remove('active'), 300);
+    } else {
+      navLinks.classList.add('active');
+      setTimeout(() => {
+        navLinks.style.opacity = "1";
+        navLinks.style.transform = "translateY(0)";
+      }, 10);
+    }
+  }
+
+  ////pop-up-text animation once
+  document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    const textElements = document.querySelectorAll(".pop-up-text");
+    textElements.forEach(element => observer.observe(element));
+    
+    // Initialize form functionality
+    initializeReviewForm();
+    
+    // Load existing reviews when page loads
+    loadReviews();
+  });
+
+  // NEW: Initialize review form functionality - THIS IS WHAT'S MISSING!
+  function initializeReviewForm() {
+    const formStars = document.querySelectorAll(".form-star");
+    const reviewRatingInput = document.getElementById("reviewRating");
+    let selectedRating = 0;
+
+    // Star rating for the form
+    if (formStars.length > 0) {
+      formStars.forEach(star => {
+        star.addEventListener("click", function() {
+          selectedRating = this.getAttribute("data-value");
+          if (reviewRatingInput) {
+            reviewRatingInput.value = selectedRating;
+          }
+          
+          // Update star display
+          formStars.forEach(s => {
+            const value = s.getAttribute("data-value");
+            if (value <= selectedRating) {
+              s.classList.add("selected");
+            } else {
+              s.classList.remove("selected");
+            }
+          });
+        });
+
+        // Add hover effect
+        star.addEventListener("mouseover", function() {
+          const hoverRating = this.getAttribute("data-value");
+          formStars.forEach(s => {
+            const value = s.getAttribute("data-value");
+            if (value <= hoverRating) {
+              s.style.color = "#ffc107";
+            } else {
+              s.style.color = "#ccc";
+            }
+          });
+        });
+
+        star.addEventListener("mouseout", function() {
+          formStars.forEach(s => {
+            const value = s.getAttribute("data-value");
+            if (value <= selectedRating) {
+              s.style.color = "#ffc107";
+            } else {
+              s.style.color = "#ccc";
+            }
+          });
+        });
+      });
+    }
+
+    // Handle form submission
+    const reviewForm = document.getElementById('reviewForm');
+    if (reviewForm) {
+      reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const userName = document.getElementById('userName').value;
+        const reviewTitle = document.getElementById('reviewTitle').value;
+        const reviewText = document.getElementById('reviewText').value;
+        
+        if (selectedRating === 0) {
+          alert('Please select a rating');
+          return;
+        }
+        
+        if (!userName || !reviewTitle || !reviewText) {
+          alert('Please fill in all fields');
+          return;
+        }
+        
+        // Create new review
+        const newReview = {
+          id: 'review-' + Date.now(),
+          userName: userName,
+          title: reviewTitle,
+          text: reviewText,
+          rating: selectedRating,
+          date: new Date().toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+          }),
+          avatar: `https://i.pravatar.cc/50?img=${Math.floor(Math.random() * 70)}`
+        };
+        
+        // Save to localStorage and display
+        saveReview(newReview);
+        displayReview(newReview);
+        
+        // Reset form
+        this.reset();
+        formStars.forEach(star => {
+          star.classList.remove('selected');
+          star.style.color = '#ccc';
+        });
+        selectedRating = 0;
+        if (reviewRatingInput) {
+          reviewRatingInput.value = '0';
+        }
+        
+        // Show success message
+        showSuccessMessage('Thank you for your testimonial!');
+      });
+    }
+  }
+
+  // Display review on page
+  function displayReview(review) {
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    if (!reviewsContainer) return;
+    
+    const reviewCard = document.createElement('div');
+    reviewCard.className = 'review-card';
+    reviewCard.id = review.id;
+    
+    reviewCard.innerHTML = `
+      <div class="review-header">
+        <img src="${review.avatar}" class="avatar" alt="User" />
+        <div class="review-info">
+          <div class="name">${review.userName}</div>
+          <div class="date">${review.date}</div>
+          <div class="rating">${review.rating}.0 ★</div>
+        </div>
+      </div>
+      <div class="review-title">${review.title}</div>
+      <div class="review-body">${review.text}</div>
+    `;
+    
+    // Add new review at the top
+    reviewsContainer.insertBefore(reviewCard, reviewsContainer.firstChild);
+  }
+
+  // Success message function
+  function showSuccessMessage(message) {
+    const successDiv = document.createElement('div');
+    successDiv.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #4caf50;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 10000;
+      transition: all 0.3s ease;
+    `;
+    successDiv.textContent = message;
+    
+    document.body.appendChild(successDiv);
+    
+    setTimeout(() => {
+      successDiv.style.opacity = '0';
+      setTimeout(() => {
+        if (document.body.contains(successDiv)) {
+          document.body.removeChild(successDiv);
+        }
+      }, 300);
+    }, 3000);
+  }
+
+  // Your existing saveReview and loadReviews functions remain the same
+  function saveReview(review) {
+    // First save to localStorage for immediate display
+    let reviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
+    reviews.unshift(review);
+    localStorage.setItem('userReviews', JSON.stringify(reviews));
+    
+    // Then send to PHP backend
+    fetch('submit_testimonial.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(review)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        console.log('Testimonial saved to server:', data);
+      } else {
+        console.error('Error saving to server:', data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Network error:', error);
+    });
+  }
+
+  function loadReviews() {
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    if (!reviewsContainer) return;
+    
+    // First load from server
+    fetch('get_testimonials.php')
+      .then(response => response.json())
+      .then(serverReviews => {
+        // Clear existing reviews
+        reviewsContainer.innerHTML = '';
+        
+        // Display server reviews
+        serverReviews.forEach(review => displayReview(review));
+        
+        // Also load local reviews (for backward compatibility)
+        const localReviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
+        localReviews.forEach(review => {
+          // Check if review already exists from server
+          const exists = serverReviews.some(serverReview => serverReview.id === review.id);
+          if (!exists) {
+            displayReview(review);
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading from server:', error);
+        // Fallback to local storage
+        const localReviews = JSON.parse(localStorage.getItem('userReviews') || '[]');
+        localReviews.forEach(review => displayReview(review));
+      });
+  }
+
+  // EXISTING: start rating functionality (for the rating box in left column)
+  const stars = document.querySelectorAll(".star");
+  const message = document.getElementById("message");
+  const storedRating = localStorage.getItem("permanentRating");
+
+  if (stars.length > 0 && message) {
+    if (storedRating) {
+      highlightStars(storedRating);
+      message.textContent = `You rated this ${storedRating} star${storedRating > 1 ? "s" : ""}.`;
+      lockRating();
+    } else {
+      stars.forEach(star => {
+        star.addEventListener("click", function () {
+          const rating = this.getAttribute("data-value");
+          localStorage.setItem("permanentRating", rating);
+          highlightStars(rating);
+          message.textContent = `Thanks! You rated this ${rating} star${rating > 1 ? "s" : ""}.`;
+          lockRating();
+        });
+      });
+    }
+
+    function highlightStars(rating) {
+      stars.forEach(star => {
+        const value = star.getAttribute("data-value");
+        if (value <= rating) {
+          star.classList.add("selected");
+        } else {
+          star.classList.remove("selected");
+        }
+      });
+    }
+
+    function lockRating() {
+      stars.forEach(star => {
+        star.style.pointerEvents = "none";
+      });
+    }
+  }
+
+  </script>
+
+
+</body>
+</html>
